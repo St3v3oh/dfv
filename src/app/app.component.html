@@ -1,0 +1,16 @@
+<div id="page-wrapper">
+
+  <!-- Header -->
+  <div id="header-wrapper">
+    <div id="header">
+      <app-header-menu [title]="this.title"></app-header-menu>
+
+      <app-praesentations-component *ngIf="route == '/' || route == '/home' || route == '' || route == '/index.html'"></app-praesentations-component>
+
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

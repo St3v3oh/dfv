@@ -1,0 +1,19 @@
+<section class="box">
+  <header>
+    <h3>{{feedEntry.title}}</h3>
+    <h5>{{feedEntry.author}}</h5>
+    <h5>{{feedEntry.pubDate | date:'dd-MM-yyyy'}}</h5>
+  </header>
+  <ul class="divided" [innerHTML]="feedEntry.content">
+  </ul>
+  <ng-container *ngIf="feedEntry.categories">
+    <ng-container *ngFor="let category of feedEntry.categories">
+      <span class="label label-default">{{category || ''}}</span>
+    </ng-container>
+  </ng-container>
+  <footer>
+    <ul class="actions">
+      <li><a routerLink="/newsartikel" (click)="readMoreClicked()" routerLinkActive="active" class="button alt">Weiterlesen</a></li>
+    </ul>
+  </footer>
+</section>
